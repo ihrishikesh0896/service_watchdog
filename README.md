@@ -1,2 +1,76 @@
-# service_watchdog
-Python script designed to monitor and log any new services that start listening on localhost (127.0.0.1) on any port. The script is cross-platform compatible, running seamlessly on Windows, Linux, and macOS.
+Sure! Below is a detailed and well-structured README file for the `local_service_monitor.py` script.
+
+---
+
+# Local Service Monitor
+
+`local_service_monitor.py` is a Python script designed to monitor and log any new services that start listening on `localhost` (127.0.0.1) on any port. The script is cross-platform compatible, running seamlessly on Windows, Linux, and macOS.
+
+## Features
+
+- **Local IP Detection**: Identifies the local IP address of the machine.
+- **Service Monitoring**: Continuously monitors for new services that are listening on `localhost`.
+- **Background Process**: Runs as a background process to ensure continuous monitoring without interrupting other tasks.
+- **Cross-Platform Compatibility**: Compatible with major operating systems including Windows, Linux, and macOS.
+- **Logging**: Logs the details of new services, including the port, process ID (PID), and process name, to a log file (`service_monitor.log`).
+
+## Requirements
+
+- Python 3.x
+- `psutil` library
+
+## Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone [https://github.com/yourusername/](https://github.com/ihrishikesh0896/service_watchdog/local_service_monitor.git)
+   cd local_service_monitor
+   ```
+
+2. **Install Dependencies**:
+   Ensure `psutil` is installed:
+   ```bash
+   pip install psutil
+   ```
+
+## Usage
+
+1. **Run the Script**:
+   Execute the script with Python:
+   ```bash
+   python local_service_monitor.py
+   ```
+
+## How It Works
+
+1. **Initialization**: The script configures logging to store logs in `service_monitor.log`.
+2. **IP Address Retrieval**: Uses the `socket` library to determine the local IP address.
+3. **Service Detection**: Utilizes the `psutil` library to fetch current services listening on `localhost`.
+4. **Monitoring Process**: Runs `monitor_services` as a background process using the `multiprocessing` module, checking for new services at specified intervals (default is every 60 seconds).
+5. **Logging**: Logs any new services detected with their port, PID, and process name.
+
+## Example Log Entry
+
+```
+2024-07-26 12:34:56 - New service detected on port 8080 with PID 12345, Name: python
+```
+
+## OS Detection
+
+The script detects the operating system and handles OS-specific operations if necessary. If an unsupported OS is detected, it logs a warning and terminates.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request if you have any improvements or new features to add.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or suggestions, please contact [your email] or open an issue on GitHub.
+
+---
+
+This README provides a comprehensive overview of the script, including its features, installation instructions, usage, and how it works. You can customize the contact information, GitHub repository link, and any other details as needed.
