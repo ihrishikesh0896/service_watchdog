@@ -23,7 +23,7 @@ Sure! Below is a detailed and well-structured README file for the `local_service
 
 1. **Clone the Repository**:
    ```bash
-   git clone [https://github.com/yourusername/](https://github.com/ihrishikesh0896/service_watchdog/local_service_monitor.git)
+   git clone https://github.com/ihrishikesh0896/service_watchdog/local_service_monitor.git
    cd local_service_monitor
    ```
 
@@ -69,8 +69,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For questions or suggestions, please contact [your email] or open an issue on GitHub.
+For questions or suggestions, please contact [ihrishikeshnate@gmail.com] or open an issue on GitHub.
 
 ---
-
-This README provides a comprehensive overview of the script, including its features, installation instructions, usage, and how it works. You can customize the contact information, GitHub repository link, and any other details as needed.
