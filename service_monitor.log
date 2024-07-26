@@ -23,3 +23,13 @@
 2024-07-26 16:40:47,021 - New service detected on port 63774 for ip :: with PID 14880, Name: chrome.exe
 2024-07-26 16:40:47,021 - New service detected on port 63774 for ip 0.0.0.0 with PID 14880, Name: chrome.exe
 2024-07-26 16:40:47,021 - New service detected on port 53289 for ip 0.0.0.0 with PID 14880, Name: chrome.exe
+2024-07-26 17:14:29 - Starting service monitor...
+2024-07-26 17:17:16 - Detected OS: Darwin
+2024-07-26 17:17:16 - Service monitor started successfully.
+2024-07-26 17:17:16 - Detected local IP: 192.168.1.2
+2024-07-26 17:17:16 - Current services: [(59270, 648), (59270, 648), (7000, 630), (7000, 630), (5000, 630), (5000, 630)]
+2024-07-26 17:17:16 - Starting service monitor...
+2024-07-26 17:17:16 - Current services: [(59270, 648), (59270, 648), (7000, 630), (7000, 630), (5000, 630), (5000, 630)]
+2024-07-26 17:18:16 - Current services: [(59270, 648), (59270, 648), (7000, 630), (7000, 630), (5000, 630), (5000, 630)]
+2024-07-26 17:19:16 - Current services: [(8000, 42413), (59270, 648), (59270, 648), (7000, 630), (7000, 630), (5000, 630), (5000, 630)]
+2024-07-26 17:19:16 - New service detected on IP 192.168.1.2 port 8000 with PID 42413, Name: python3.9

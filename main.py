@@ -2,8 +2,12 @@ import psutil
 import time
 import logging
 import multiprocessing
+import platform
 import socket
-from datetime import datetime
+
+# Configure logging
+logging.basicConfig(filename='service_monitor.log', level=logging.INFO,
+                    format='%(asctime)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 
 
 def get_local_ip():
@@ -12,47 +16,67 @@ def get_local_ip():
         # connect() for UDP doesn't send packets
         s.connect(('8.8.8.8', 1))
         local_ip = s.getsockname()[0]
-    except Exception:
+        logging.info(f"Detected local IP: {local_ip}")
+    except Exception as e:
         local_ip = '127.0.0.1'
+        logging.error(f"Error obtaining local IP: {e}")
     finally:
         s.close()
     return local_ip
 
-# Configure logging
-logging.basicConfig(filename='service_monitor.log', level=logging.INFO,
-                    format='%(asctime)s - %(message)s')
 
-# Function to get current services
-def get_current_services():
+def get_current_services(local_ip):
     connections = psutil.net_connections(kind='inet')
     services = []
-    print('Round Iteration at :' + str(datetime.now().strftime('%H:%M:%S %Y-%m-%d')))
-    monitor_list = ['127.0.0.1','0.0.0.0', get_local_ip, '::']
+    monitor_list = ['127.0.0.1', '0.0.0.0', local_ip, '::']
     for conn in connections:
-        if conn.laddr.ip in monitor_list:
-            services.append((conn.laddr.ip, conn.laddr.port, conn.pid))
+        if conn.laddr.ip in monitor_list and conn.status == 'LISTEN':
+            services.append((conn.laddr.port, conn.pid))
+    logging.info(f"Current services: {services}")
     return services
 
+
 def monitor_services(interval=60):
-    known_services = set(get_current_services())
+    local_ip = get_local_ip()
+    known_services = set(get_current_services(local_ip))
     logging.info("Starting service monitor...")
 
     while True:
-        current_services = set(get_current_services())
-        new_services = current_services - known_services
+        try:
+            current_services = set(get_current_services(local_ip))
+            new_services = current_services - known_services
 
-        for ip, port, pid in new_services:
-            try:
-                proc = psutil.Process(pid)
-                logging.info(f"New service detected on port {port} for ip {ip} with PID {pid}, Name: {proc.name()}")
-            except psutil.NoSuchProcess:
-                logging.warning(f"Service detected on port {port} for ip {ip} but the process {pid} does not exist.")
+            for port, pid in new_services:
+                try:
+                    proc = psutil.Process(pid)
+                    logging.info(f"New service detected on IP {local_ip} port {port} with PID {pid}, Name: {proc.name()}")
+                except psutil.NoSuchProcess:
+                    logging.warning(f"Service detected on IP {local_ip} port {port} but the process {pid} does not exist.")
+                except psutil.AccessDenied:
+                    logging.warning(f"Access denied when trying to access process with PID {pid} on IP {local_ip} port {port}.")
+                except PermissionError:
+                    logging.warning(f"Permission error when trying to access process with PID {pid} on IP {local_ip} port {port}.")
 
-        known_services = current_services
+            known_services = current_services
+        except Exception as e:
+            logging.error(f"Error in monitoring services: {e}")
+
         time.sleep(interval)
 
+
 if __name__ == "__main__":
-    # Run the monitor as a background process
-    p = multiprocessing.Process(target=monitor_services, args=(60,))
-    p.start()
-    p.join()
+    os_name = platform.system()
+    logging.info(f"Detected OS: {os_name}")
+
+    if os_name in ["Windows", "Linux", "Darwin"]:
+        try:
+            # Run the monitor as a background process
+            p = multiprocessing.Process(target=monitor_services, args=(60,))
+            p.start()
+            logging.info("Service monitor started successfully.")
+        except Exception as e:
+            logging.error(f"Failed to start service monitor: {e}")
+    else:
+        error_message = f"Unsupported OS: {os_name}"
+        print(error_message)
+        logging.warning(error_message)
