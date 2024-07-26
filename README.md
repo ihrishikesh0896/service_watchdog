@@ -1,5 +1,3 @@
-Sure! Below is a detailed and well-structured README file for the `local_service_monitor.py` script.
-
 ---
 
 # Local Service Monitor
@@ -30,7 +28,7 @@ Sure! Below is a detailed and well-structured README file for the `local_service
 2. **Install Dependencies**:
    Ensure `psutil` is installed:
    ```bash
-   pip install psutil
+   pip install -r requirements.txt
    ```
 
 ## Usage
