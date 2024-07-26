@@ -1,0 +1,25 @@
+2024-07-26 16:32:46,912 - Starting service monitor...
+2024-07-26 16:33:46,919 - New service detected on port 62610 for ip 0.0.0.0 with PID 14880, Name: chrome.exe
+2024-07-26 16:33:46,919 - New service detected on port 62610 for ip :: with PID 14880, Name: chrome.exe
+2024-07-26 16:34:46,933 - New service detected on port 50376 for ip :: with PID 2188, Name: svchost.exe
+2024-07-26 16:34:46,933 - New service detected on port 1980 for ip 127.0.0.1 with PID 10660, Name: GCloud.exe
+2024-07-26 16:34:46,952 - New service detected on port 50376 for ip 0.0.0.0 with PID 2188, Name: svchost.exe
+2024-07-26 16:37:46,982 - New service detected on port 56334 for ip 0.0.0.0 with PID 2188, Name: svchost.exe
+2024-07-26 16:37:46,982 - New service detected on port 56334 for ip :: with PID 2188, Name: svchost.exe
+2024-07-26 16:37:46,982 - New service detected on port 57203 for ip 0.0.0.0 with PID 14880, Name: chrome.exe
+2024-07-26 16:37:46,982 - New service detected on port 57203 for ip :: with PID 14880, Name: chrome.exe
+2024-07-26 16:38:46,994 - New service detected on port 51748 for ip 0.0.0.0 with PID 2188, Name: svchost.exe
+2024-07-26 16:38:46,994 - New service detected on port 51748 for ip :: with PID 2188, Name: svchost.exe
+2024-07-26 16:39:47,006 - New service detected on port 52271 for ip :: with PID 14880, Name: chrome.exe
+2024-07-26 16:39:47,006 - New service detected on port 5353 for ip 0.0.0.0 with PID 14880, Name: chrome.exe
+2024-07-26 16:39:47,006 - New service detected on port 52270 for ip 0.0.0.0 with PID 14880, Name: chrome.exe
+2024-07-26 16:39:47,006 - New service detected on port 52271 for ip 0.0.0.0 with PID 14880, Name: chrome.exe
+2024-07-26 16:39:47,006 - New service detected on port 5353 for ip :: with PID 14880, Name: chrome.exe
+2024-07-26 16:40:47,021 - New service detected on port 60423 for ip :: with PID 14880, Name: chrome.exe
+2024-07-26 16:40:47,021 - New service detected on port 53289 for ip :: with PID 14880, Name: chrome.exe
+2024-07-26 16:40:47,021 - New service detected on port 59048 for ip :: with PID 14880, Name: chrome.exe
+2024-07-26 16:40:47,021 - New service detected on port 60423 for ip 0.0.0.0 with PID 14880, Name: chrome.exe
+2024-07-26 16:40:47,021 - New service detected on port 59048 for ip 0.0.0.0 with PID 14880, Name: chrome.exe
+2024-07-26 16:40:47,021 - New service detected on port 63774 for ip :: with PID 14880, Name: chrome.exe
+2024-07-26 16:40:47,021 - New service detected on port 63774 for ip 0.0.0.0 with PID 14880, Name: chrome.exe
+2024-07-26 16:40:47,021 - New service detected on port 53289 for ip 0.0.0.0 with PID 14880, Name: chrome.exe
