@@ -10,14 +10,14 @@
 - **Cross-Platform Compatibility**: Compatible with major operating systems including Windows, Linux, and macOS.
 - **Logging**: Logs the details of new services, including the port, process ID (PID), and process name, to a log file (`service_monitor.log`).
 
-- Use Case: Integration with EDR Systems
+## Use Case: Integration with EDR Systems
 This script can be used as part of a custom EDR (Endpoint Detection and Response) solution to enhance security monitoring capabilities. It helps in detecting temporary ports that are opened and used to send/receive data from other devices or hosts, which can be indicative of suspicious activity or potential security threats.
 
 By integrating this script with your EDR system, you can:
 
-Monitor for Temporary Services: Detect new services that open ports temporarily, which might be used for unauthorized data transfer.
-Log Suspicious Activity: Keep a detailed log of all new services, making it easier to investigate suspicious activities.
-Automate Responses: Combine this script with other security tools to automate responses to potential threats, such as alerting administrators or shutting down suspicious services.
+- Monitor for Temporary Services: Detect new services that open ports temporarily, which might be used for unauthorized data transfer.
+- Log Suspicious Activity: Keep a detailed log of all new services, making it easier to investigate suspicious activities.
+- Automate Responses: Combine this script with other security tools to automate responses to potential threats, such as alerting administrators or shutting down suspicious services.
 
 ## Requirements
 
