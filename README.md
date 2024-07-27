@@ -28,7 +28,7 @@ By integrating this script with your EDR system, you can:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/ihrishikesh0896/service_watchdog/local_service_monitor.git
+   git clone https://github.com/ihrishikesh0896/service_watchdog.git
    cd local_service_monitor
    ```
 
